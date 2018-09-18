@@ -2,27 +2,91 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App-header {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  height: 20vh;
+  padding: 3vw;
+  color: pink;
+  border: 3px solid pink;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.App-logo {
+  /* animation: App-logo-spin infinite 10s linear; */
+  height: 20vh;
+  border: 1px solid white;
+  margin-top: 0;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 7vw;
+  border: 1px solid white;
+  height: 8vw;
+  margin-left: 1.5vw;
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 4vh;
+  font-weight: 600;
+}
+
+.allSpots {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5vw;
+}
+
+.mainSpotsCard {
+    background-color:rgb(232, 245, 252);
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3vw;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 1vw;
+    padding: .5vw .5vw;
+    border-radius: .25vw;
+    border: 1px solid black;
+    box-shadow: .06vw .06vw .06vw 0vw rgba(0,0,0,0.75);
+}
+
+.mainSpotsCard > h2 {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+  margin: 0;
+  
+}
+
+.mainSpotsImage {
+  width: 30vw;
+  height: 37vw;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2vw;
+  border-radius: .25vw;
+  border: .06vw solid black;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+.App-footer {
+  display: flex;
+  background-color: #222;
+  height: 10vh;
+
+}
+
+.App-footer > p {
+  color: white;
+}
+
+.license-p {
+  margin-right: 3vw;
+  margin-left: 3vw;
 }
