@@ -1,9 +1,10 @@
 import React from 'react';
 import '../App.css';
 
-const SomedaySpot = (props) => {
+
+const YesterdaySpot = (props) => {
     
-    console.log("hello from Someday Spot.  Here're the props: ", props);
+    console.log("hello from YesterdaySpot.  Here're the props: ", props);
     
     return (
         <li className="spotCard">
@@ -35,4 +36,4 @@ const SomedaySpot = (props) => {
     )
 }
 
-export default SomedaySpot;
+export default YesterdaySpot;

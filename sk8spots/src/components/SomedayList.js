@@ -2,8 +2,6 @@ import React from 'react';
 import '../App.css';
 import SomedaySpot from './SomedaySpot';
 
-import burnside from '../burnside.jpg';
-
 const SomedayList = (props) => {
     
     console.log("here's what we passed down to the routed someday component: ", props.someday);

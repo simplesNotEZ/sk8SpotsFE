@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header'
+import Welcome from './components/Welcome'
 import Home from './components/Home'
 import SomedayList from './components/SomedayList'
-import Yesterday from './components/Yesterday'
+import YesterdayList from './components/YesterdayList'
 import Footer from './components/Footer'
 
-const apiURL = "https://sk8spots.herokuapp.com/someday";
+const apiURL1 = "https://sk8spots.herokuapp.com/someday";
+const apiURL2 = "https://sk8spots.herokuapp.com/yesterday";
 
 class App extends Component {
   state = {
@@ -18,15 +20,27 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(apiURL)
+    fetch(apiURL1)
       .then(response => response.json())
       .then((json) => {
         console.log(json);
         this.setState({
           someday: json.somedaySpots
           });
-          console.log("here's what's in state: ", this.state.someday);
+          console.log("From fetch #1 and in state: ", this.state.someday);
       });
+
+      fetch(apiURL2)
+      .then(response => response.json())
+      .then((json) => {
+        console.log(json);
+        this.setState({
+          yesterday: json.yesterdaySpots
+          });
+          console.log("From #2 fetch and in state: ", this.state.yesterday);
+      });
+
+      
   }
   
   render() {
@@ -35,12 +49,14 @@ class App extends Component {
         <div className="App">
           <Header title={this.state.title[0]} />
           <div className="content">
-            <Route exact path="/" component={Home} /> 
-            {/* <Route path="/someday" someday={this.state.someday} component={Someday} /> */}
+            <Route exact path="/" component={Welcome} />
+            <Route path="/home" component={Home} /> 
             <Route path="/someday" 
                    render={ (props) => <SomedayList {...props} someday={this.state.someday} />}
             />
-            <Route path="/yesterday" component={Yesterday} /> 
+            <Route path="/yesterday" 
+                   render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
+            /> 
           </div>
           <Footer />
         </div>
