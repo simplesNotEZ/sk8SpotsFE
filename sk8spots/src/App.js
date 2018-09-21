@@ -7,6 +7,7 @@ import Welcome from './components/Welcome'
 import Home from './components/Home'
 import SomedayList from './components/SomedayList'
 import YesterdayList from './components/YesterdayList'
+import Form from './components/Form'
 import Footer from './components/Footer'
 
 const apiURL1 = "https://sk8spots.herokuapp.com/someday";
@@ -57,6 +58,7 @@ class App extends Component {
             <Route path="/yesterday" 
                    render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
             /> 
+            <Route path="/newSpot" component={Form} />
           </div>
           <Footer />
         </div>

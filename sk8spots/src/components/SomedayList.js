@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../App.css';
 import SomedaySpot from './SomedaySpot';
 
@@ -13,6 +14,9 @@ const SomedayList = (props) => {
     return (
         <div className="somedayDiv">
             <h1>Someday Spots</h1>
+            <Link to="/newSpot">
+                <button className="addASpot">Add A Spot</button>
+            </Link>
             <ul className="somedaySpotsList">
                 {somedaySpotsArray}   
             </ul>

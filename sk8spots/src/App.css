@@ -62,7 +62,7 @@
   font-weight: 600;
 }
 
-/* Welcome Stylings */
+/* Welcome Stylings ****************************************************************************/
 .intro {
   display: flex;
   justify-content: center;
@@ -163,7 +163,7 @@
   font-size: .8vw;
 }
 
-
+/* Home-page card stylings ***************************************************************************/
 .allSpots {
   display: flex;
   justify-content: space-around;
@@ -213,6 +213,7 @@
   to { transform: rotate(360deg); }
 }
 
+/* Someday/Yesterday List-container stylings *************************************************************/
 .somedayDiv {
   display: flex;
   flex-direction: column;
@@ -223,10 +224,35 @@
 .somedayDiv > h1 {
   font-size: 5vw;
 }
-.somedaySpotsList {
-  list-style-type: none;
+
+.addASpot {
+  background-color: #ffff00;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 2.5vw;
+  padding: .5vw .5vw;
+  cursor: pointer;
+  border-radius: .25vw;
+  border: 1px solid black;
+  box-shadow: .25vw .25vw .125vw 0vw rgba(0,0,0,0.75);
 }
 
+.addASpot:hover {
+  background-color: #e6e600;
+}
+
+.somedaySpotsList {
+  list-style-type: none;
+  overflow: scroll;
+  width: 90vw;
+  height: 65vh;
+}
+
+/* Spot-card styling ***************************************************************************/
 .spotCard {
   display: flex;
   flex-direction: row;
@@ -322,6 +348,51 @@
   line-height: 1.5;
 }
 
+/* Form-stylings ******************************************************************************/
+.outerFormDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formDiv {
+  border: 1px solid black;
+  margin-bottom: 10vw;
+  padding: 1.5vw;
+}
+
+.formSubDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.form-div > label {
+  margin-right: .5vw;
+}
+
+.inputBox {
+  width: 25vw;
+}
+
+textarea {
+  width: 25vw;
+}
+
+.submitBtnDiv {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Footer-stylings ******************************************************************************/
 .App-footer {
   display: flex;
   background-color: #222;
