@@ -5,10 +5,10 @@ import SomedaySpot from './SomedaySpot';
 
 const SomedayList = (props) => {
     
-    console.log("here's what we passed down to the routed someday component: ", props.someday);
+    console.log("here's what we passed down to the routed SomedayList component: ", props);
 
     const somedaySpotsArray = props.someday.map((spot) => {
-        return <SomedaySpot key={spot.id} spot={spot} />
+        return <SomedaySpot key={spot.id} spot={spot} deleteSpot={props.deleteSpot} />
     })
     
     return (

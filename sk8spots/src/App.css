@@ -348,6 +348,57 @@
   line-height: 1.5;
 }
 
+.deleteBtn {
+  background-color: #FCED45;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 2.5vw;
+  padding: .5vw .5vw;
+  cursor: pointer;
+  border-radius: .25vw;
+  border: 1px solid black;
+  box-shadow: .25vw .25vw .125vw 0vw rgba(0,0,0,0.75);
+}
+
+.deleteBtn:hover {
+  background-color: #e6e600;
+}
+
+.editBtn {
+  background-color: #FB1E7A;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 2.5vw;
+  padding: .5vw .5vw;
+  cursor: pointer;
+  border-radius: .25vw;
+  border: 1px solid black;
+  box-shadow: .25vw .25vw .125vw 0vw rgba(0,0,0,0.75);
+}
+
+.editBtn:hover {
+  background-color: #e20360;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 2.5vw;
+  padding: .5vw .5vw;
+  cursor: pointer;
+  border-radius: .25vw;
+  border: 1px solid black;
+  box-shadow: .25vw .25vw .125vw 0vw rgba(0,0,0,0.75);
+}
 /* Form-stylings ******************************************************************************/
 .outerFormDiv {
   display: flex;

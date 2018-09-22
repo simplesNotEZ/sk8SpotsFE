@@ -17,7 +17,27 @@ class App extends Component {
   state = {
     title: ["Welcome to $k8$pots!", "Fuck you: Goodbye Wrold!"],
     someday: [],
-    yesterday: []
+    yesterday: [],
+    postedNewSpot: false
+  }
+
+  deleteSpot= (event, spotId) => {
+    event.preventDefault();
+    
+    const currentSpots = this.state.someday;
+
+    const filteredSpots = currentSpots.filter((spotObj) => {
+        return (spotObj.id !== spotId)
+    });
+    this.setState({
+        someday: filteredSpots
+    });
+
+    ////////now, the functionality to delete from the database and not just from the array in state:
+    fetch('http://localhost:9000/someday/' + spotId, {
+    method: 'DELETE'
+    })
+    
   }
 
   addGifToGlobalState = (newSpot) => {
@@ -28,20 +48,27 @@ class App extends Component {
     let updatedSpots = currentSpots;
     console.log("after unshifting, updatedSpots is: ", updatedSpots);
     this.setState({
-      someday: updatedSpots
+      someday: updatedSpots,
+      postedNewSpot: true
     });
     console.log("State updated with updatedSpots: ", this.state.someday);
+    console.log("postedNewSpot in state is now: ", this.state.postedNewSpot);
+
   }
 
   componentDidMount() {
+    
+    console.log("ComponentDidMount ran!");
+
     fetch(apiURL1)
       .then(response => response.json())
       .then((json) => {
-        console.log("Here's the response from fetch #1--pre-state: ", json);
+        console.log("Here's the response from fetch #1--pre-state and pre-reverse: ", json);
+        const reversedArr = json.somedaySpots.reverse();
         this.setState({
-          someday: json.somedaySpots
+          someday: reversedArr
           });
-          console.log("From fetch #1 AND in state: ", this.state.someday);
+          console.log("From fetch #1 AND in state and reversed: ", this.state.someday);
       });
 
       fetch(apiURL2)
@@ -66,14 +93,14 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route path="/home" component={Home} /> 
             <Route path="/someday" 
-                   render={ (props) => <SomedayList {...props} someday={this.state.someday}/> }        
+                    render={ (props) => <SomedayList {...props} someday={this.state.someday} deleteSpot={this.deleteSpot} /> }        
             />
             <Route path="/yesterday" 
-                   render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
+                    render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
             /> 
             <Route path="/newSpot"
-                   render={ (props) => <Form {...props} addGifToGlobalState={this.addGifToGlobalState} />}
-             />
+                    render={ (props) => <Form {...props} addGifToGlobalState={this.addGifToGlobalState} />}
+            />
           </div>
           <Footer />
         </div>

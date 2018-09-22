@@ -44,3 +44,11 @@
 //Alf-skateboard:
 http://static.shoplightspeed.com/shops/604229/files/006379326/fa-skates-fa-alf-deck.jpg
 https://img.discogs.com/YY0cPqCooT4-96MubpeaVRpbAb4=/fit-in/600x584/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1093348-1208556674.jpeg.jpg
+
+//Sex-pistol colors:
+green: #36F62D;
+hover-green: ;
+pink: #FB1E7A;
+hover-pink: #e20360;
+yellow: #FCED45;
+hover-yellow: #e2d003;

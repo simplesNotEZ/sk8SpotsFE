@@ -36,23 +36,23 @@ class Form extends Component {
         })
         .then(resp => {
             if (!resp.ok) {
-              if (resp.status >= 400 && resp.status < 500) {
+                if (resp.status >= 400 && resp.status < 500) {
                 return resp.json().then(data => {
-                  const err = { errorMessage: data.message };
-                  throw err;
+                    const err = { errorMessage: data.message };
+                    throw err;
                 });
-              }
-              const err = { errorMessage: 'Blah' };
-              throw err;
+                }
+                const err = { errorMessage: 'Blah' };
+                throw err;
             }
             return resp.json();
-          })
+        })
         .then(json => {
             console.log("here's the response.json back from the post: ", json);
-            if (!json.error) {
-                const newSpot = json;
-                this.props.addGifToGlobalState(newSpot);
-            }
+            // if (!json.error) {
+            //     const newSpot = json;
+            //     this.props.addGifToGlobalState(newSpot);
+            // }
         })    
     }    
     
@@ -64,73 +64,73 @@ class Form extends Component {
                     <form className="form" onSubmit={this.handleSubmit}>
                         <div className="formSubDiv">
                             <div className="form-div">
-                              <label htmlFor="image_url">Image: </label>
-                              <input className="inputBox"
-                                     id="image_url" 
-                                     type="text"
-                                     value={this.state.image_url} 
-                                     name="image_url"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="image_url">Image: </label>
+                                <input className="inputBox"
+                                        id="image_url" 
+                                        type="text"
+                                        value={this.state.image_url} 
+                                        name="image_url"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="name">Name: </label>
-                              <input className="inputBox"
-                                     id="name" 
-                                     type="text"
-                                     value={this.state.name} 
-                                     name="name"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="name">Name: </label>
+                                <input className="inputBox"
+                                        id="name" 
+                                        type="text"
+                                        value={this.state.name} 
+                                        name="name"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="country">Country: </label>
-                              <input className="inputBox"
-                                     id="country" 
-                                     type="text"
-                                     value={this.state.country} 
-                                     name="country"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="country">Country: </label>
+                                <input className="inputBox"
+                                        id="country" 
+                                        type="text"
+                                        value={this.state.country} 
+                                        name="country"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="address">Address: </label>
-                               <input className="inputBox"
-                                     id="address" 
-                                     type="text"
-                                     value={this.state.address} 
-                                     name="address"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="address">Address: </label>
+                                <input className="inputBox"
+                                        id="address" 
+                                        type="text"
+                                        value={this.state.address} 
+                                        name="address"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="city">City: </label>
-                               <input className="inputBox"
-                                     id="city" 
-                                     type="text"
-                                     value={this.state.city} 
-                                     name="city"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="city">City: </label>
+                                <input className="inputBox"
+                                        id="city" 
+                                        type="text"
+                                        value={this.state.city} 
+                                        name="city"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="state">State: </label>
-                              <input className="inputBox"
-                                     id="state" 
-                                     type="text"
-                                     value={this.state.state} 
-                                     name="state"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="state">State: </label>
+                                <input className="inputBox"
+                                        id="state" 
+                                        type="text"
+                                        value={this.state.state} 
+                                        name="state"
+                                        onChange={this.handleChange} 
                                 />
                             </div>
                             <div className="form-div">
-                              <label htmlFor="description">Description: </label>
-                              <textarea className="inputBox"
-                                     id="description" 
-                                     type="text"
-                                     value={this.state.description} 
-                                     name="description"
-                                     onChange={this.handleChange} 
+                                <label htmlFor="description">Description: </label>
+                                <textarea className="inputBox"
+                                        id="description" 
+                                        type="text"
+                                        value={this.state.description} 
+                                        name="description"
+                                        onChange={this.handleChange} 
                                 >
                                 </textarea>
                             </div>
