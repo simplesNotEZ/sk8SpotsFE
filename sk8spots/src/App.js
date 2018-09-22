@@ -10,7 +10,7 @@ import YesterdayList from './components/YesterdayList'
 import Form from './components/Form'
 import Footer from './components/Footer'
 
-const apiURL1 = "https://sk8spots.herokuapp.com/someday";
+const apiURL1 = "http://localhost:9000/someday";
 const apiURL2 = "https://sk8spots.herokuapp.com/yesterday";
 
 class App extends Component {
@@ -20,15 +20,28 @@ class App extends Component {
     yesterday: []
   }
 
+  addGifToGlobalState = (newSpot) => {
+
+    let currentSpots = this.state.someday;
+    console.log("currentSpots is: ", currentSpots);
+    currentSpots.unshift(newSpot);
+    let updatedSpots = currentSpots;
+    console.log("after unshifting, updatedSpots is: ", updatedSpots);
+    this.setState({
+      someday: updatedSpots
+    });
+    console.log("State updated with updatedSpots: ", this.state.someday);
+  }
+
   componentDidMount() {
     fetch(apiURL1)
       .then(response => response.json())
       .then((json) => {
-        console.log(json);
+        console.log("Here's the response from fetch #1--pre-state: ", json);
         this.setState({
           someday: json.somedaySpots
           });
-          console.log("From fetch #1 and in state: ", this.state.someday);
+          console.log("From fetch #1 AND in state: ", this.state.someday);
       });
 
       fetch(apiURL2)
@@ -53,12 +66,14 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route path="/home" component={Home} /> 
             <Route path="/someday" 
-                   render={ (props) => <SomedayList {...props} someday={this.state.someday} />}
+                   render={ (props) => <SomedayList {...props} someday={this.state.someday}/> }        
             />
             <Route path="/yesterday" 
                    render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
             /> 
-            <Route path="/newSpot" component={Form} />
+            <Route path="/newSpot"
+                   render={ (props) => <Form {...props} addGifToGlobalState={this.addGifToGlobalState} />}
+             />
           </div>
           <Footer />
         </div>

@@ -5,9 +5,8 @@ import '../App.css';
 const apiURL = "http://localhost:9000/someday";
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    
+    state = {
             image_url: "",
             name: "",
             country: "",
@@ -15,7 +14,6 @@ class Form extends Component {
             city: "",
             state: "",
             description: ""
-        }
     }
     
     handleChange = (event) => {
@@ -24,16 +22,16 @@ class Form extends Component {
 
         this.setState({
             [key]: value
-        }, () => console.log(this.state))
+        });
     }    
     
     handleSubmit = (event) => {
         event.preventDefault();
         console.log("here's handleSubmit: ", this.state);
+        console.log("And here's this.props: ", this.props);
         fetch(apiURL, {
             method: 'POST',
-            headers: 
-                new Headers({'Content-Type': 'application/json'}),
+            headers: new Headers({'Content-Type': 'application/json'}),
             body: JSON.stringify(this.state)
         })
         .then(resp => {
@@ -51,11 +49,11 @@ class Form extends Component {
           })
         .then(json => {
             console.log("here's the response.json back from the post: ", json);
-            // if (!newPost.error){
-            //     const newSpot = newPost.created;
-            //     this.props.addGifToGlobalState(newGif);
-            
-        })
+            if (!json.error) {
+                const newSpot = json;
+                this.props.addGifToGlobalState(newSpot);
+            }
+        })    
     }    
     
     render () {
