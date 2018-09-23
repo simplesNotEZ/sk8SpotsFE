@@ -6,7 +6,6 @@ import '../App.css';
 
 
 const Home = (props) => {
-    // console.log(props);
     
     return (
         <div className="homeDiv">

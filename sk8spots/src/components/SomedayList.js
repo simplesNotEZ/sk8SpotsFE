@@ -8,7 +8,7 @@ const SomedayList = (props) => {
     console.log("here's what we passed down to the routed SomedayList component: ", props);
 
     const somedaySpotsArray = props.someday.map((spot) => {
-        return <SomedaySpot key={spot.id} spot={spot} deleteSpot={props.deleteSpot} />
+        return <SomedaySpot key={spot.id} spot={spot} deleteSpot={props.deleteSpot} addEditToGlobalState={props.addEditToGlobalState} />
     })
     
     return (

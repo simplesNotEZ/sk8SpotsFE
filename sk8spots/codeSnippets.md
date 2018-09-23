@@ -45,6 +45,9 @@
 http://static.shoplightspeed.com/shops/604229/files/006379326/fa-skates-fa-alf-deck.jpg
 https://img.discogs.com/YY0cPqCooT4-96MubpeaVRpbAb4=/fit-in/600x584/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1093348-1208556674.jpeg.jpg
 
+hot-babe: https://i.pinimg.com/originals/40/8e/4f/408e4fdfeff611dfb01b2e4e6c7b23a6.jpg
+hot-babe2: http://kuapp.me/wp-content/uploads/2018/05/skater-girl-hot-girls-skateboarding-wear.jpg
+
 //Sex-pistol colors:
 green: #36F62D;
 hover-green: ;
@@ -52,3 +55,6 @@ pink: #FB1E7A;
 hover-pink: #e20360;
 yellow: #FCED45;
 hover-yellow: #e2d003;
+
+
+onClick={(event) => props.addEditToGlobalState(event, props.spot)}

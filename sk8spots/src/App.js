@@ -8,6 +8,7 @@ import Home from './components/Home'
 import SomedayList from './components/SomedayList'
 import YesterdayList from './components/YesterdayList'
 import Form from './components/Form'
+import Edit from './components/Edit'
 import Footer from './components/Footer'
 
 const apiURL1 = "http://localhost:9000/someday";
@@ -18,7 +19,8 @@ class App extends Component {
     title: ["Welcome to $k8$pots!", "Fuck you: Goodbye Wrold!"],
     someday: [],
     yesterday: [],
-    postedNewSpot: false
+    postedNewSpot: false,
+    spotToEdit: []
   }
 
   deleteSpot= (event, spotId) => {
@@ -54,6 +56,16 @@ class App extends Component {
     console.log("State updated with updatedSpots: ", this.state.someday);
     console.log("postedNewSpot in state is now: ", this.state.postedNewSpot);
 
+  }
+
+  addEditToGlobalState = (event, spotToEdit) => {
+    event.preventDefault();
+    console.log("addEditToGlobalState is running.  And here's the spotToEdit: ", spotToEdit);
+    console.log("spotToEdit in state before it's added: ", this.state.spotToEdit);
+    this.setState({
+      spotToEdit: spotToEdit
+    });
+    console.log("here's this.state.spotToEdit once it's added: ", this.state.spotToEdit);
   }
 
   componentDidMount() {
@@ -93,7 +105,7 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route path="/home" component={Home} /> 
             <Route path="/someday" 
-                    render={ (props) => <SomedayList {...props} someday={this.state.someday} deleteSpot={this.deleteSpot} /> }        
+                    render={ (props) => <SomedayList {...props} someday={this.state.someday} deleteSpot={this.deleteSpot} addEditToGlobalState={this.addEditToGlobalState} />}        
             />
             <Route path="/yesterday" 
                     render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
@@ -101,6 +113,8 @@ class App extends Component {
             <Route path="/newSpot"
                     render={ (props) => <Form {...props} addGifToGlobalState={this.addGifToGlobalState} />}
             />
+            <Route path="/edit" component={Edit} />
+            
           </div>
           <Footer />
         </div>
