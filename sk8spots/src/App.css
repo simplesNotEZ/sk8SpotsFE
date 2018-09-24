@@ -3,10 +3,10 @@
 }
 
 @keyframes headerColor {
-  0%    { background-color: #222; }
-  25%   { background-color: #00f; }
-  75%   { background-color: #f00; }
-  100%  { background-color: #222; }
+  0%    { background-color: #FCED45; }
+  33%   { background-color: #36F62D; }
+  67%   { background-color: #FB1E7A; }
+  100%  { background-color: #FB1E7A; }
 }
 @keyframes  textColor {
   0%    { color: #0f0; }
@@ -171,7 +171,7 @@
 }
 
 .mainSpotsCard {
-    background-color:rgb(232, 245, 252);
+    background-color:#fefce6;
     color: black;
     text-align: center;
     text-decoration: none;
@@ -186,7 +186,7 @@
 }
 
 .mainSpotsCard:hover {
-  background-color:rgb(202, 215, 222);
+  background-color:#fefacd;
 }
 
 .mainSpotsCard > h2 {
@@ -258,7 +258,7 @@
   flex-direction: row;
   justify-content: center;
   width: 90vw;
-  background-color:rgb(232, 245, 252);
+  background-color:#fefce6;
   color: black;
   /* text-align: center; */
   text-decoration: none;
@@ -349,7 +349,7 @@
 }
 
 .deleteBtn {
-  background-color: #FCED45;
+  background-color: #36F62D;
   color: black;
   text-align: center;
   text-decoration: none;
@@ -365,7 +365,8 @@
 }
 
 .deleteBtn:hover {
-  background-color: #e6e600;
+  background-color: #14dc09
+  ;
 }
 
 .editBtn {

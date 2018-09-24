@@ -1,7 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import churchPipe from '../churchPipe.jpg';
 import oldSpot from '../blackNWhiteSpot.jpeg';
+import Header from './Header';
+import Footer from './Footer';
 import '../App.css';
 
 
@@ -9,6 +11,7 @@ const Home = (props) => {
     
     return (
         <div className="homeDiv">
+            <Header title={props.title} />
             <p className="App-intro">
             Where you gonna skate today?
             </p>
@@ -26,6 +29,7 @@ const Home = (props) => {
                     </section>
                 </Link>
             </div>
+            <Footer />
         </div>
     )
 }

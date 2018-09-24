@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 import '../App.css';
 
 const apiURL = "http://localhost:9000/someday";
@@ -13,7 +13,8 @@ class Form extends Component {
             address: "",
             city: "",
             state: "",
-            description: ""
+            description: "",
+            posted: false
     }
     
     handleChange = (event) => {
@@ -29,10 +30,13 @@ class Form extends Component {
         event.preventDefault();
         console.log("here's handleSubmit: ", this.state);
         console.log("And here's this.props: ", this.props);
+        let data = {...this.state};
+        delete data.posted;
+        console.log("after delete: ", data);
         fetch(apiURL, {
             method: 'POST',
             headers: new Headers({'Content-Type': 'application/json'}),
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(data)
         })
         .then(resp => {
             if (!resp.ok) {
@@ -50,6 +54,10 @@ class Form extends Component {
         .then(json => {
             console.log("here's the response.json back from the post: ", json);
             // if (!json.error) {
+            this.props.fetchSomeday();
+            this.setState({
+                posted: true
+            })
             //     const newSpot = json;
             //     this.props.addGifToGlobalState(newSpot);
             // }
@@ -57,6 +65,7 @@ class Form extends Component {
     }    
     
     render () {
+        const posted = this.state.posted;
         return (
             <div className="outerFormDiv">
                 <h2>Add A New Spot</h2>
@@ -140,6 +149,7 @@ class Form extends Component {
                         </div>
                     </form>
                 </div>
+                {posted && <Redirect to="/someday" />}
             </div>
         )
     }

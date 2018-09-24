@@ -50,11 +50,14 @@ hot-babe2: http://kuapp.me/wp-content/uploads/2018/05/skater-girl-hot-girls-skat
 
 //Sex-pistol colors:
 green: #36F62D;
-hover-green: ;
+hover-green: #14dc09;
 pink: #FB1E7A;
 hover-pink: #e20360;
 yellow: #FCED45;
 hover-yellow: #e2d003;
+
+light-yellow: #fdf59b, #fefacd, #fefce6;
+hover lt-yell: #fdf7b4, #fefacd;
 
 
 onClick={(event) => props.addEditToGlobalState(event, props.spot)}

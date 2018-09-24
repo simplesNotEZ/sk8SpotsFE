@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Header from "./Header"
+import Footer from "./Footer"
+
 import '../App.css';
 
 
@@ -8,6 +11,7 @@ const Welcome = (props) => {
     
     return (
         <div className="homeDiv">
+            <Header title={props.title} />
             <h2 className="intro">
             Come'on In!  The concrete's fine!
             </h2>
@@ -27,9 +31,8 @@ const Welcome = (props) => {
                     </form>
                     <p className="noAccount">Don't have an account?  <a href="#">Sign up here</a>.</p>
                 </div>
-                
-               
             </div>
+            <Footer />
         </div>
     )
 }

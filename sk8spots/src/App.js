@@ -16,7 +16,7 @@ const apiURL2 = "https://sk8spots.herokuapp.com/yesterday";
 
 class App extends Component {
   state = {
-    title: ["Welcome to $k8$pots!", "Fuck you: Goodbye Wrold!"],
+    title: ["Welcome to $k8$pots", "$k8$pots"],
     someday: [],
     yesterday: [],
     postedNewSpot: false,
@@ -68,10 +68,7 @@ class App extends Component {
     console.log("here's this.state.spotToEdit once it's added: ", this.state.spotToEdit);
   }
 
-  componentDidMount() {
-    
-    console.log("ComponentDidMount ran!");
-
+  fetchSomeday = () => {
     fetch(apiURL1)
       .then(response => response.json())
       .then((json) => {
@@ -82,8 +79,10 @@ class App extends Component {
           });
           console.log("From fetch #1 AND in state and reversed: ", this.state.someday);
       });
+  }
 
-      fetch(apiURL2)
+  fetchYesterday = () => {
+    fetch(apiURL2)
       .then(response => response.json())
       .then((json) => {
         console.log(json);
@@ -92,31 +91,55 @@ class App extends Component {
           });
           console.log("From #2 fetch and in state: ", this.state.yesterday);
       });
+  }
 
-      
+  componentDidMount() {
+    
+    console.log("ComponentDidMount ran!");
+    this.fetchSomeday();
+    this.fetchYesterday();
   }
   
   render() {
     return (
       <Router>
         <div className="App">
-          <Header title={this.state.title[0]} />
           <div className="content">
-            <Route exact path="/" component={Welcome} />
-            <Route path="/home" component={Home} /> 
+            <Route exact path="/" 
+                    render={ (props) => {
+                      return (<Welcome {...props} title={this.state.title[0]} />)
+                      }
+                    }
+            />  
+            <Route path="/home" 
+                    render={ (props) => {
+                      return (<Home {...props} title={this.state.title[1]} />)
+                      }
+                    } 
+            />
             <Route path="/someday" 
-                    render={ (props) => <SomedayList {...props} someday={this.state.someday} deleteSpot={this.deleteSpot} addEditToGlobalState={this.addEditToGlobalState} />}        
+                    render={ (props) => {
+                      return (<SomedayList {...props} title={this.state.title[1]} 
+                                                      someday={this.state.someday} 
+                                                      deleteSpot={this.deleteSpot} 
+                                                      addEditToGlobalState={this.addEditToGlobalState} 
+                              />)
+                      }
+                    }        
             />
             <Route path="/yesterday" 
-                    render={ (props) => <YesterdayList {...props} yesterday={this.state.yesterday} />}
+                    render={ (props) => {
+                      return (<YesterdayList {...props} title={this.state.title[1]} 
+                                                        yesterday={this.state.yesterday} 
+                              />)
+                      }
+                    }
             /> 
             <Route path="/newSpot"
-                    render={ (props) => <Form {...props} addGifToGlobalState={this.addGifToGlobalState} />}
+                    render={ (props) => <Form {...props} title={this.state.title[1]} addGifToGlobalState={this.addGifToGlobalState} fetchSomeday={this.fetchSomeday} />}
             />
             <Route path="/edit" component={Edit} />
-            
           </div>
-          <Footer />
         </div>
       </Router>
     );
