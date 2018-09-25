@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header'
-import Welcome from './components/Welcome'
-import Home from './components/Home'
-import SomedayList from './components/SomedayList'
-import YesterdayList from './components/YesterdayList'
-import Form from './components/Form'
-import Edit from './components/Edit'
-import Footer from './components/Footer'
+import Header from './components/Header';
+import Welcome from './components/Welcome';
+import Home from './components/Home';
+import SomedayList from './components/SomedayList';
+import YesterdayList from './components/YesterdayList';
+import SomedayForm from './components/SomedayForm';
+import YesterdayForm from './components/YesterdayForm';
+import EditSomedaySpot from './components/EditSomedaySpot';
+import EditYesterdaySpot from './components/EditYesterdaySpot';
+import Footer from './components/Footer';
 
 const apiURL1 = "http://localhost:9000/someday";
-const apiURL2 = "https://sk8spots.herokuapp.com/yesterday";
+const apiURL2 = "http://localhost:9000/yesterday";
 
 class App extends Component {
   state = {
@@ -86,6 +88,7 @@ class App extends Component {
       .then(response => response.json())
       .then((json) => {
         console.log(json);
+        const reversedArr = json.yesterdaySpots.reverse();
         this.setState({
           yesterday: json.yesterdaySpots
           });
@@ -135,10 +138,40 @@ class App extends Component {
                       }
                     }
             /> 
-            <Route path="/newSpot"
-                    render={ (props) => <Form {...props} title={this.state.title[1]} addGifToGlobalState={this.addGifToGlobalState} fetchSomeday={this.fetchSomeday} />}
+            <Route path="/newSomedaySpot"
+                    render={ (props) => {
+                      return (<SomedayForm {...props} title={this.state.title[1]} 
+                                                      addGifToGlobalState={this.addGifToGlobalState} 
+                                                      fetchSomeday={this.fetchSomeday} 
+                              />)
+                      }
+                    }
             />
-            <Route path="/edit" component={Edit} />
+            <Route path="/newYesterdaySpot"
+                    render={ (props) => {
+                      return (<YesterdayForm {...props} title={this.state.title[1]} 
+                                                        addGifToGlobalState={this.addGifToGlobalState} 
+                                                        fetchYesterday={this.fetchYesterday} 
+                              />)
+                      }
+                    }
+            />
+            <Route path="/editSomedaySpot" 
+                    render={ (props) => {
+                      return (<EditSomedaySpot {...props} title={this.state.title[1]}
+                                                          fetchSomeday={this.fetchSomeday}
+                              />)
+                      }
+                    }
+            />
+            <Route path="/editYesterdaySpot" 
+                    render={ (props) => {
+                      return (<EditYesterdaySpot {...props} title={this.state.title[1]}
+                                                            fetchYesterday={this.fetchYesterday}
+                              />)
+                      }
+                    }
+            />
           </div>
         </div>
       </Router>

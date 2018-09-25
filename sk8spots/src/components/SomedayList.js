@@ -19,15 +19,17 @@ const SomedayList = (props) => {
     })
     
     return (
-        <div className="somedayDiv">
+        <div className="outerSomedayDiv">
             <Header title={props.title} />
-            <h1>Someday Spots</h1>
-            <Link to="/newSpot">
-                <button className="addASpot">Add A Spot</button>
-            </Link>
-            <ul className="somedaySpotsList">
-                {somedaySpotsArray}   
-            </ul>
+            <div className="somedayDiv">
+                <h1>Someday Spots</h1>
+                <Link to="/newSomedaySpot">
+                    <button className="addASpot">Add A Spot</button>
+                </Link>
+                <ul className="somedaySpotsList">
+                    {somedaySpotsArray}   
+                </ul>
+            </div>
             <Footer />
         </div>
     )

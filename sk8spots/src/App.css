@@ -15,8 +15,12 @@
   100%  { color: #0f0; }
 }
 
+/* Header Stylings ****************************************************************************/
+
 .App-header {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   /* background-color: #222; */
   height: 20vh;

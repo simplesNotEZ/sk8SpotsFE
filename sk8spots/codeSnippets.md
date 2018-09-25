@@ -48,6 +48,12 @@ https://img.discogs.com/YY0cPqCooT4-96MubpeaVRpbAb4=/fit-in/600x584/filters:stri
 hot-babe: https://i.pinimg.com/originals/40/8e/4f/408e4fdfeff611dfb01b2e4e6c7b23a6.jpg
 hot-babe2: http://kuapp.me/wp-content/uploads/2018/05/skater-girl-hot-girls-skateboarding-wear.jpg
 
+d-muthrpumpn-p: https://i.pinimg.com/originals/92/6b/93/926b934f5175f1fdb56c70f340b93913.jpg
+
+mutt: http://www.mastiffhaven.com/wp-content/uploads/589-best-80-s-skateboarding-images-on-pinterest-rodney-mullen.jpg
+
+skatin-granny: http://www.allmystery.de/i/t33116e_1150363_d41c_625x1000.jpg
+
 //Sex-pistol colors:
 green: #36F62D;
 hover-green: #14dc09;

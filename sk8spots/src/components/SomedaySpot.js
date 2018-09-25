@@ -32,7 +32,7 @@ const SomedaySpot = (props) => {
                 <div className="EDbuttons">
                     <button className="deleteBtn" onClick={(event) => props.deleteSpot(event, props.spot.id)}>Delete</button>
                     <Link to={{
-                        pathname: "/edit",
+                        pathname: "/editSomedaySpot",
                         state: {
                             spot: props.spot
                         }
