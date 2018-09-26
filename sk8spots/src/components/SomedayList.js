@@ -13,7 +13,7 @@ const SomedayList = (props) => {
         return (<SomedaySpot key={spot.id} 
                             spot={spot}
                             title={props.title} 
-                            deleteSpot={props.deleteSpot} 
+                            deleteSomedaySpot={props.deleteSomedaySpot} 
                             addEditToGlobalState={props.addEditToGlobalState} 
                 />)
     })
@@ -22,7 +22,7 @@ const SomedayList = (props) => {
         <div className="outerSomedayDiv">
             <Header title={props.title} />
             <div className="somedayDiv">
-                <h1>Someday Spots</h1>
+                <h1>$omeday $pots</h1>
                 <Link to="/newSomedaySpot">
                     <button className="addASpot">Add A Spot</button>
                 </Link>

@@ -1,12 +1,51 @@
 .App {
-  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: sk8OrDye;
+  src: url(sk8OrDye.ttf);
+}
+
+@font-face {
+  font-family: freshTracks;
+  src: url(FreshTrack.ttf);
+}
+
+@font-face {
+  font-family: gangBang;
+  src: url(gangBang.ttf);
+}
+
+@font-face {
+  font-family: lebowski;
+  src: url(lebowski.ttf);
+}
+
+@font-face {
+  font-family: fromStreet;
+  src: url(fromStreet.ttf);
+}
+
+@font-face {
+  font-family: sprayerFont;
+  src: url(sprayerFont.ttf);
 }
 
 @keyframes headerColor {
   0%    { background-color: #FCED45; }
-  33%   { background-color: #36F62D; }
-  67%   { background-color: #FB1E7A; }
+  10%   { background-color: #FCED45; }
+  20%   { background-color: #FCED45; }
+  30%   { background-color: #36F62D; }
+  40%   { background-color: #36F62D; }
+  50%   { background-color: #36F62D; }
+  60%   { background-color: #36F62D; }
+  70%   { background-color: #FB1E7A; }
+  80%   { background-color: #FB1E7A; }
+  90%   { background-color: #FB1E7A; }
   100%  { background-color: #FB1E7A; }
+  
 }
 @keyframes  textColor {
   0%    { color: #0f0; }
@@ -25,7 +64,7 @@
   /* background-color: #222; */
   height: 20vh;
   padding: 3vw;
-  color: white; 
+  color: black; 
   border: 3px solid pink;
   
   
@@ -44,14 +83,72 @@
 }
 
 
-.App-title {
-  font-size: 7vw;
+/* .App-title {
+  font-family: sk8OrDye;
+  font-size: 10vw;
+  letter-spacing: .75vw;
   border: 1px solid white;
-  height: 8vw;
+  height: 10vw;
   margin-left: 1.5vw;
+} */
 
+/* .App-title {
+  font-family: freshTracks;
+  font-size: 7vw;
+  letter-spacing: .75vw;
+  border: 1px solid white;
+  height: 10vw;
+  margin-left: 1.5vw;
+} */
 
+/* .App-title {
+  font-family: gangBang;
+  font-size: 5vw;
+  letter-spacing: 1vw;
+  border: 1px solid white;
+  height: 10vw;
+  margin-left: 1.5vw;
+} */
+
+/* .App-title {
+  font-family: lebowski;
+  font-size: 10vw;
+  letter-spacing: .5vw;
+  border: 1px solid white;
+  height: 6vw;
+  margin-left: 1.5vw;
+} */
+
+.App-title {
+  font-family: lebowski;
+  font-size: 10vw;
+  letter-spacing: .7vw;
+  border: 1px solid white;
+  height: 6vw;
+  margin-left: 1.5vw;
 }
+
+.welcome-title {
+  font-family: lebowski;
+  font-size: 8vw;
+  letter-spacing: .7vw;
+  border: 1px solid white;
+  height: 6vw;
+  margin-left: 1.5vw;
+}
+
+.App-subTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: lebowski;
+  font-size: 3vw;
+  letter-spacing: .2vw;
+  border: 1px solid white;
+  height: 3vw;
+  margin-left: 1.5vw;
+}
+
 .App-title:hover {
 
   animation-name: textColor;
@@ -59,6 +156,20 @@
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
+}
+
+.h1-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  margin-left: 1vw;
+  padding: 0;
+}
+
+.h1-div > h1 {
+  padding: 0;
+  margin: 0;
 }
 
 .App-intro {
@@ -72,6 +183,7 @@
   justify-content: center;
   font-size: 4vh;
   border: 1px solid black;
+  margin-top: 8vh;
 }
 
 .login-form {
@@ -86,8 +198,8 @@
 }
 
 .login-form form {        
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    background: #fefce6;
+    box-shadow: 0vw .30vw .75vw .125vw rgba(0,0,0,0.75);
     /* border: 1px solid red; */
     border-radius: .125vw;
     padding: 1vw 0;
@@ -171,7 +283,18 @@
 .allSpots {
   display: flex;
   justify-content: space-around;
+  padding-top: 5vw;
   padding-bottom: 5vw;
+}
+
+.linkElement {
+  text-decoration: none;
+}
+
+.linkElement > section > h2 {
+  font-family: lebowski;
+  letter-spacing: .2vw;
+
 }
 
 .mainSpotsCard {
@@ -179,14 +302,15 @@
     color: black;
     text-align: center;
     text-decoration: none;
-    font-size: 3vw;
+    font-size: 2vw;
     font-weight: 400;
+    width: 34vw;
     margin: 0;
     margin-bottom: 1vw;
     padding: .5vw .5vw;
     border-radius: .25vw;
     border: 1px solid black;
-    box-shadow: .06vw .06vw .06vw 0vw rgba(0,0,0,0.75);
+    box-shadow: 0vw .30vw .75vw .125vw rgba(0,0,0,0.75);
 }
 
 .mainSpotsCard:hover {
@@ -227,6 +351,8 @@
 
 .somedayDiv > h1 {
   font-size: 5vw;
+  font-family: lebowski;
+  letter-spacing: .5vw;
 }
 
 .addASpot {
@@ -251,9 +377,12 @@
 
 .somedaySpotsList {
   list-style-type: none;
-  overflow: scroll;
-  width: 90vw;
-  height: 65vh;
+  /* overflow: scroll; */
+  /* width: 90vw;
+  height: 65vh; */
+  border: 1px solid black;
+  padding-left: 0;
+  padding: 0 .5vw;
 }
 
 /* Spot-card styling ***************************************************************************/
@@ -262,6 +391,7 @@
   flex-direction: row;
   justify-content: center;
   width: 90vw;
+  height: 52vh;
   background-color:#fefce6;
   color: black;
   /* text-align: center; */
@@ -269,11 +399,11 @@
   font-size: 1vw;
   font-weight: 400;
   margin: 0;
-  margin-bottom: 1vw;
+  margin-bottom: 2.5vw;
   padding: 0;
   border-radius: .25vw;
   border: 1px solid black;
-  box-shadow: .06vw .06vw .06vw 0vw rgba(0,0,0,0.75);
+  box-shadow: 0vw .30vw .75vw .125vw rgba(0,0,0,0.75);
 }
 
 .cardImg {
@@ -288,18 +418,22 @@
 .spotDetails {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   width: 70vw;
+  margin-top: 1vw;
   margin-right: 1vw;
   margin-left: 1vw;
+  margin-bottom: 0;
   padding: 0;
-  border: 2px solid brown;
+  border: 3px solid brown;
 }
 
 .spotDetails > h2 {
   display: flex;
   justify-content: center;
   font-size: 3vw;
+  height: 6.1vh;
+  overflow: scroll;
   margin: 0;
   padding: 0;
   padding-top: .25vw;
@@ -308,6 +442,8 @@
 
 .spotDetails2 {
   border: 2px solid pink;
+  overflow: scroll;
+  height: 18vw;
   margin: 0;
   padding: 0;
 }
@@ -352,6 +488,18 @@
   line-height: 1.5;
 }
 
+/* Edit & Delete Buttons **********************************************************************/
+
+.EDbuttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0;
+  padding-right: 1vw;
+  margin: 0;
+  margin-top: 1vw;
+}
+
 .deleteBtn {
   background-color: #36F62D;
   color: black;
@@ -369,8 +517,7 @@
 }
 
 .deleteBtn:hover {
-  background-color: #14dc09
-  ;
+  background-color: #14dc09;
 }
 
 .editBtn {
@@ -382,7 +529,7 @@
   font-weight: 500;
   margin: 0;
   margin-left: 2.5vw;
-  padding: .5vw .5vw;
+  padding: .5vw 1.2vw .5vw 1.2vw;
   cursor: pointer;
   border-radius: .25vw;
   border: 1px solid black;
@@ -398,7 +545,7 @@
   font-weight: 500;
   margin: 0;
   margin-left: 2.5vw;
-  padding: .5vw .5vw;
+  padding: .5vw 1.2vw .5vw 1.2vw;
   cursor: pointer;
   border-radius: .25vw;
   border: 1px solid black;
@@ -415,6 +562,7 @@
   border: 1px solid black;
   margin-bottom: 10vw;
   padding: 1.5vw;
+  box-shadow: 0vw .30vw .75vw .125vw rgba(0,0,0,0.75);
 }
 
 .formSubDiv {
@@ -436,6 +584,7 @@
 
 .inputBox {
   width: 25vw;
+  padding-left: .4vw;
 }
 
 textarea {
@@ -447,8 +596,70 @@ textarea {
   justify-content: center;
 }
 
+/* Add-spot-stylings ***************************************************************************** */
+.formDiv {
+  background-color: #fefce6;
+  border-radius: .15vw;
+  padding: 2vw 3vw;
+  margin-top: 5vw;
+}
 
-/* Footer-stylings ******************************************************************************/
+.formDiv > h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+
+form > h2 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3vh;
+}
+
+.form-div2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div2 > label {
+  margin-bottom: .5vh;
+}
+
+.form-div2 > input {
+  margin-bottom: 1.25vh;
+  
+}
+
+.inputBox {
+  height: 3vh;
+  border: 1px solid black;
+  border-radius: .15vw;
+  box-shadow: .067vw .067vw .125vw 0vw rgba(0,0,0,0.75) inset;
+}
+
+.textArea {
+  margin-bottom: 3vh;
+  height: 7vh;
+}
+
+.submit-button {
+    background-color: #ffff00;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: 500;
+    padding: .5vw .5vw;
+    cursor: pointer;
+    border-radius: .25vw;
+    border: 1px solid black;
+    box-shadow: .25vw .25vw .125vw 0vw rgba(0,0,0,0.75);
+}
+
+/* Footer-stylings ***************************************************************************** */
 .App-footer {
   display: flex;
   background-color: #222;

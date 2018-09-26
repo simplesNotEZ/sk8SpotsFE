@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import '../App.css';
@@ -17,7 +17,8 @@ class EditYesterdaySpot extends Component {
             address: "",
             city: "",
             state: "",
-            description: ""
+            description: "",
+            posted: false
     }
     
     handleChange = (event) => {
@@ -34,10 +35,13 @@ class EditYesterdaySpot extends Component {
         event.preventDefault();
         console.log("here's handleSubmit: ", this.state);
         console.log("handleSubmit from edit's id param is: ", id);
+        let data = {...this.state};
+        delete data.posted;
+        console.log("after delete: ", data);
         fetch('http://localhost:9000/yesterday/' + id, {
             method: 'PUT',
             headers: new Headers({'Content-Type': 'application/json'}),
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(data)
         })
         .then(resp => {
             if (!resp.ok) {
@@ -55,6 +59,10 @@ class EditYesterdaySpot extends Component {
         .then(json => {
             console.log("here's the response.json back from the PUT: ", json);
             // if (!json.error) {
+            this.props.fetchYesterday();
+            this.setState({
+                posted: true
+            });
             //     const newSpot = json;
             //     this.props.addGifToGlobalState(newSpot);
             // }
@@ -66,15 +74,17 @@ class EditYesterdaySpot extends Component {
     }
     
     render () {
+        const posted = this.state.posted;
         return (
             <div className="moreOuterFormDiv">
                 <Header title={this.props.title} />
                 <div className="outerFormDiv">
-                    <h2>Edit {this.props.location.state.spot.name}</h2>
+                    
                     <div className="formDiv">
+                        <h2>Edit {this.props.location.state.spot.name}</h2>
                         <form className="form" onSubmit={(event) => this.handleSubmit(event, this.props.location.state.spot.id)}>
                             <div className="formSubDiv">
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="image_url">Image: </label>
                                     <input className="inputBox"
                                             id="image_url" 
@@ -85,7 +95,7 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="name">Name: </label>
                                     <input className="inputBox"
                                             id="name" 
@@ -96,7 +106,7 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="country">Country: </label>
                                     <input className="inputBox"
                                             id="country" 
@@ -107,7 +117,7 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="address">Address: </label>
                                     <input className="inputBox"
                                             id="address" 
@@ -118,7 +128,7 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="city">City: </label>
                                     <input className="inputBox"
                                             id="city" 
@@ -129,7 +139,7 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="state">State: </label>
                                     <input className="inputBox"
                                             id="state" 
@@ -140,9 +150,9 @@ class EditYesterdaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="description">Description: </label>
-                                    <textarea className="inputBox"
+                                    <textarea className="inputBox textArea"
                                             id="description" 
                                             type="text"
                                             value={this.state.description}
@@ -158,6 +168,7 @@ class EditYesterdaySpot extends Component {
                             </div>
                         </form>
                     </div>
+                    {posted && <Redirect to="/yesterday" />}
                 </div>
                 <Footer />
             </div>

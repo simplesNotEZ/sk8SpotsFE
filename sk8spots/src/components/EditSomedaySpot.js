@@ -80,11 +80,12 @@ class EditSomedaySpot extends Component {
             <div className="moreOuterFormDiv">
                 <Header title={this.props.title} />
                 <div className="outerFormDiv">
-                    <h2>Edit {this.props.location.state.spot.name}</h2>
+                    
                     <div className="formDiv">
                         <form className="form" onSubmit={(event) => this.handleSubmit(event, this.props.location.state.spot.id)}>
+                            <h2>Edit {this.props.location.state.spot.name}</h2>
                             <div className="formSubDiv">
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="image_url">Image: </label>
                                     <input className="inputBox"
                                             id="image_url" 
@@ -95,7 +96,7 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="name">Name: </label>
                                     <input className="inputBox"
                                             id="name" 
@@ -106,7 +107,7 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="country">Country: </label>
                                     <input className="inputBox"
                                             id="country" 
@@ -117,7 +118,7 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="address">Address: </label>
                                     <input className="inputBox"
                                             id="address" 
@@ -128,7 +129,7 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="city">City: </label>
                                     <input className="inputBox"
                                             id="city" 
@@ -139,7 +140,7 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="state">State: </label>
                                     <input className="inputBox"
                                             id="state" 
@@ -150,9 +151,9 @@ class EditSomedaySpot extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="description">Description: </label>
-                                    <textarea className="inputBox"
+                                    <textarea className="inputBox textArea"
                                             id="description" 
                                             type="text"
                                             value={this.state.description}

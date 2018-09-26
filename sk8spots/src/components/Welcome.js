@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from "./Header";
+import Header2 from "./Header2";
+import Footer from "./Footer";
 
 import '../App.css';
 
@@ -11,13 +12,13 @@ const Welcome = (props) => {
     
     return (
         <div className="homeDiv">
-            <Header title={props.title} />
+            <Header2 title={props.title} title2={props.title2} />
             <h2 className="intro">
-            Come'on In!  The concrete's fine!
+            Come'on in, the concrete's fine!
             </h2>
             <div className="allSpots">
                 <div className="login-form">
-                    <form action="" method="">
+                    <form>
                         <div className="topStuff">
                             <h2>Sign In</h2>   
                             <input type="text" className="input" placeholder="Username" required="required" />

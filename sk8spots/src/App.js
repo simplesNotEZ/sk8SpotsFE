@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header';
+import Header2 from './components/Header2';
 import Welcome from './components/Welcome';
 import Home from './components/Home';
 import SomedayList from './components/SomedayList';
@@ -18,14 +19,14 @@ const apiURL2 = "http://localhost:9000/yesterday";
 
 class App extends Component {
   state = {
-    title: ["Welcome to $k8$pots", "$k8$pots"],
+    title: ["Welcome to ", "$k8$pots"],
     someday: [],
     yesterday: [],
     postedNewSpot: false,
     spotToEdit: []
   }
 
-  deleteSpot= (event, spotId) => {
+  deleteSomedaySpot= (event, spotId) => {
     event.preventDefault();
     
     const currentSpots = this.state.someday;
@@ -39,6 +40,25 @@ class App extends Component {
 
     ////////now, the functionality to delete from the database and not just from the array in state:
     fetch('http://localhost:9000/someday/' + spotId, {
+    method: 'DELETE'
+    })
+    
+  }
+
+  deleteYesterdaySpot= (event, spotId) => {
+    event.preventDefault();
+    
+    const currentSpots = this.state.yesterday;
+
+    const filteredSpots = currentSpots.filter((spotObj) => {
+        return (spotObj.id !== spotId)
+    });
+    this.setState({
+        yesterday: filteredSpots
+    });
+
+    ////////now, the functionality to delete from the database and not just from the array in state:
+    fetch('http://localhost:9000/yesterday/' + spotId, {
     method: 'DELETE'
     })
     
@@ -110,7 +130,7 @@ class App extends Component {
           <div className="content">
             <Route exact path="/" 
                     render={ (props) => {
-                      return (<Welcome {...props} title={this.state.title[0]} />)
+                      return (<Welcome {...props} title={this.state.title[0]} title2={this.state.title[1]} />)
                       }
                     }
             />  
@@ -124,7 +144,7 @@ class App extends Component {
                     render={ (props) => {
                       return (<SomedayList {...props} title={this.state.title[1]} 
                                                       someday={this.state.someday} 
-                                                      deleteSpot={this.deleteSpot} 
+                                                      deleteSomedaySpot={this.deleteSomedaySpot} 
                                                       addEditToGlobalState={this.addEditToGlobalState} 
                               />)
                       }
@@ -133,7 +153,8 @@ class App extends Component {
             <Route path="/yesterday" 
                     render={ (props) => {
                       return (<YesterdayList {...props} title={this.state.title[1]} 
-                                                        yesterday={this.state.yesterday} 
+                                                        yesterday={this.state.yesterday}
+                                                        deleteYesterdaySpot={this.deleteYesterdaySpot} 
                               />)
                       }
                     }

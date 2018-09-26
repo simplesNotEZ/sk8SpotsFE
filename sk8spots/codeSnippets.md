@@ -52,6 +52,8 @@ d-muthrpumpn-p: https://i.pinimg.com/originals/92/6b/93/926b934f5175f1fdb56c70f3
 
 mutt: http://www.mastiffhaven.com/wp-content/uploads/589-best-80-s-skateboarding-images-on-pinterest-rodney-mullen.jpg
 
+lance-mountain: http://www.jenkemmag.com/home/wp-content/uploads/2015/11/lanceheader.png
+
 skatin-granny: http://www.allmystery.de/i/t33116e_1150363_d41c_625x1000.jpg
 
 //Sex-pistol colors:

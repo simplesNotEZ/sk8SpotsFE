@@ -33,7 +33,6 @@ const YesterdaySpot = (props) => {
                     </div>
                 </div>
                 <div className="EDbuttons">
-                    <button className="deleteBtn" onClick={(event) => props.deleteSpot(event, props.spot.id)}>Delete</button>
                     <Link to={{
                         pathname: "/editYesterdaySpot",
                         state: {
@@ -42,6 +41,7 @@ const YesterdaySpot = (props) => {
                     }} >
                         <button className="editBtn">Edit</button>
                     </Link>
+                    <button className="deleteBtn" onClick={(event) => props.deleteYesterdaySpot(event, props.spot.id)}>Delete</button>
                 </div>
             </div> 
         </li>

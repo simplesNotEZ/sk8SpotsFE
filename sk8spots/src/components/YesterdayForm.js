@@ -72,11 +72,11 @@ class YesterdayForm extends Component {
             <div className="moreOuterFormDiv">
                 <Header title={this.props.title} />
                 <div className="outerFormDiv">
-                    <h2>Add A New Spot</h2>
                     <div className="formDiv">
+                        <h2>Add A New Spot</h2>
                         <form className="form" onSubmit={this.handleSubmit}>
                             <div className="formSubDiv">
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="image_url">Image: </label>
                                     <input className="inputBox"
                                             id="image_url" 
@@ -86,7 +86,7 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="name">Name: </label>
                                     <input className="inputBox"
                                             id="name" 
@@ -96,7 +96,7 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="country">Country: </label>
                                     <input className="inputBox"
                                             id="country" 
@@ -106,7 +106,7 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="address">Address: </label>
                                     <input className="inputBox"
                                             id="address" 
@@ -116,7 +116,7 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="city">City: </label>
                                     <input className="inputBox"
                                             id="city" 
@@ -126,7 +126,7 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="state">State: </label>
                                     <input className="inputBox"
                                             id="state" 
@@ -136,9 +136,9 @@ class YesterdayForm extends Component {
                                             onChange={this.handleChange} 
                                     />
                                 </div>
-                                <div className="form-div">
+                                <div className="form-div2">
                                     <label htmlFor="description">Description: </label>
-                                    <textarea className="inputBox"
+                                    <textarea className="inputBox textArea"
                                             id="description" 
                                             type="text"
                                             value={this.state.description} 

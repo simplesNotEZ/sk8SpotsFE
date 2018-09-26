@@ -9,14 +9,17 @@ const YesterdayList = (props) => {
     console.log("here's what we passed down to the routed yesterday component: ", props.yesterday);
 
     const yesterdaySpotsArray = props.yesterday.map((spot) => {
-        return <YesterdaySpot key={spot.id} spot={spot} />
+        return (<YesterdaySpot key={spot.id} 
+                                spot={spot}
+                                deleteYesterdaySpot={props.deleteYesterdaySpot}
+                />)
     })
     
     return (
         <div className="outerDiv">
             <Header title={props.title} />
             <div className="somedayDiv">
-                <h1>Yesterday Spots</h1>
+                <h1>Other-Day $pots</h1>
                 <Link to="/newYesterdaySpot">
                     <button className="addASpot">Add A Spot</button>
                 </Link>

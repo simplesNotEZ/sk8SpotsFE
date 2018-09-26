@@ -12,19 +12,16 @@ const Home = (props) => {
     return (
         <div className="homeDiv">
             <Header title={props.title} />
-            <p className="App-intro">
-            Where you gonna skate today?
-            </p>
             <div className="allSpots">
-                <Link to="/someday">
+                <Link to="/someday" className="linkElement">
                     <section className="wishSpots mainSpotsCard">
-                        <h2>Someday Spots</h2>
+                        <h2>$omeday $pots</h2>
                         <img src={churchPipe} className="mainSpotsImage" alt="a halfpipe in a church"/>
                     </section>
                 </Link>
-                <Link to="/yesterday">
+                <Link to="/yesterday"  className="linkElement">
                     <section className="theOtherDaySpots mainSpotsCard">
-                        <h2>Yesterday Spots</h2>
+                        <h2>Other-Day $pots</h2>
                         <img src={oldSpot} className="mainSpotsImage" alt="old-school skate spot"/>
                     </section>
                 </Link>
