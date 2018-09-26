@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import sk8RDie from '../skate-or-die.png';
 import cheetahBoard from '../img/cheetahBoard.png';
 import slasher from '../img/slasher.png';
@@ -14,18 +15,18 @@ const Header3 = (props) => {
                 <h1 className="App-title3">{props.title}</h1>
             </div>
             <div className="navSpots3">
-                <div className="navLink3">
+                <Link to="/someday" className="navLink3">
                     <img src={slasher} className="slasher3" alt="slasher"/>
                     <p className="slasherPgraph3">Someday</p>
-                </div>
-                <div className="navLink3">
+                </Link>
+                <Link to="/home" className="navLink3">
                     <img src={slasher} className="slasher3" alt="slasher"/>
                     <p className="slasherPgraph3">Home</p>
-                </div>
-                <div className="navLink3">
+                </Link>
+                <Link to="/yesterday" className="navLink3">
                     <img src={slasher} className="slasher3" alt="slasher"/>
                     <p className="slasherPgraph3">Other-Day</p>
-                </div>
+                </Link>
             </div>
         </header>
     )

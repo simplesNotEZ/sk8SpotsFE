@@ -46,7 +46,7 @@
 
 https://img1.10bestmedia.com/Images/Photos/316562/p-maxresdefault_54_990x660.jpg
 
-
+Boasting 60,000 square feet of skateable, concrete terrain, the park challenges boarders, bladers, and bikers of all levels (bring your own gear - no rentals available.) Pegs are not allowed on bicycles. Admission is free and the park is open seven days a week.
 
 //Alf-skateboard:
 http://static.shoplightspeed.com/shops/604229/files/006379326/fa-skates-fa-alf-deck.jpg
