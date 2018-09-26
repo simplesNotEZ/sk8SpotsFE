@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Header2 from './components/Header2';
+import Header3 from './components/Header3';
 import Welcome from './components/Welcome';
 import Home from './components/Home';
 import SomedayList from './components/SomedayList';

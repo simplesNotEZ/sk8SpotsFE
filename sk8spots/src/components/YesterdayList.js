@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from './Header';
+import Header3 from './Header3';
 import Footer from './Footer';
 import YesterdaySpot from './YesterdaySpot';
 import '../App.css';
@@ -17,7 +17,7 @@ const YesterdayList = (props) => {
     
     return (
         <div className="outerDiv">
-            <Header title={props.title} />
+            <Header3 title={props.title} />
             <div className="somedayDiv">
                 <h1>Other-Day $pots</h1>
                 <Link to="/newYesterdaySpot">

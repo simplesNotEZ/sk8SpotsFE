@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../App.css';
 import SomedaySpot from './SomedaySpot';
-import Header from './Header';
+import Header3 from './Header3';
 import Footer from './Footer';
 
 const SomedayList = (props) => {
@@ -20,7 +20,7 @@ const SomedayList = (props) => {
     
     return (
         <div className="outerSomedayDiv">
-            <Header title={props.title} />
+            <Header3 title={props.title} />
             <div className="somedayDiv">
                 <h1>$omeday $pots</h1>
                 <Link to="/newSomedaySpot">

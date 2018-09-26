@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import Header from './Header';
+import Header3 from './Header3';
 import Footer from './Footer';
 import '../App.css';
 
@@ -70,7 +70,7 @@ class YesterdayForm extends Component {
         const posted = this.state.posted;
         return (
             <div className="moreOuterFormDiv">
-                <Header title={this.props.title} />
+                <Header3 title={this.props.title} />
                 <div className="outerFormDiv">
                     <div className="formDiv">
                         <h2>Add A New Spot</h2>
