@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from "./Header";
+import { Link } from 'react-router-dom';
 import Header2 from "./Header2";
 import Footer from "./Footer";
 
@@ -8,7 +7,6 @@ import '../App.css';
 
 
 const Welcome = (props) => {
-    // console.log(props);
     
     return (
         <div className="homeDiv">
@@ -21,8 +19,8 @@ const Welcome = (props) => {
                     <form>
                         <div className="topStuff">
                             <h2>Sign In</h2>   
-                            <input type="text" className="input" placeholder="Username" required="required" />
-                            <input type="password" className="input" placeholder="Password" required="required" />
+                            <input type="text" className="input" placeholder="Just click on Log In." required="required" />
+                            <input type="password" className="input" placeholder="This feature is just for looks for now." required="required" />
                             <Link to="/home" className="btnLink"><button type="submit" className="btn">Log in</button></Link>
                         </div>    
                         <div className="rememberMe">

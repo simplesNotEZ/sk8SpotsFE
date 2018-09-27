@@ -1,11 +1,8 @@
 import React from 'react';
-import sk8RDie from '../skate-or-die.png';
 import cheetahBoard from '../img/cheetahBoard.png';
-import slasher from '../img/slasher.png';
 import '../App.css';
 
 const Header2 = (props) => {
-    // console.log(props);
     
     return (
         <header className="App-header">

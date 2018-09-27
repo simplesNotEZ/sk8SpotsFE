@@ -1,12 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import sk8RDie from '../skate-or-die.png';
+import { Link } from 'react-router-dom';
 import cheetahBoard from '../img/cheetahBoard.png';
 import slasher from '../img/slasher.png';
 import '../App.css';
 
 const Header3 = (props) => {
-    // console.log(props);
     
     return (
         <header className="header3">

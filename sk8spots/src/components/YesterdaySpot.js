@@ -1,12 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 
 const YesterdaySpot = (props) => {
-    
-    console.log("hello from YesterdaySpot.  Here're the props: ", props);
-    
+        
     return (
         <li className="spotCard">
             <img src={props.spot.image_url} className="cardImg" alt="skate spot" />
