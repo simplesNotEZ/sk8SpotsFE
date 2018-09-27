@@ -64,7 +64,13 @@ class SomedayForm extends Component {
             //     this.props.addGifToGlobalState(newSpot);
             // }
         })    
-    }    
+    }  
+    
+    submitAlert = (event) => {
+        event.preventDefault();
+
+        alert("Nice try buddy.  Don't be meddlin with my database son!");
+    }
     
     render () {
         const posted = this.state.posted;
@@ -75,7 +81,7 @@ class SomedayForm extends Component {
                     
                     <div className="formDiv">
                         <h2>Add A New Spot</h2>
-                        <form className="form" onSubmit={this.handleSubmit}>
+                        <form className="form" onSubmit={this.submitAlert}>
                             <div className="formSubDiv">
                                 <div className="form-div2">
                                     <label htmlFor="image_url">Image: </label>

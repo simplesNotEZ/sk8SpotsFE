@@ -69,6 +69,12 @@ class EditYesterdaySpot extends Component {
         })    
     }
 
+    submitAlert = (event) => {
+        event.preventDefault();
+
+        alert("Nice try buddy.  Don't be meddlin with my database son!");
+    }
+
     componentDidMount () {
         console.log("Props passed to Edit: ", this.props);
     }
@@ -82,7 +88,7 @@ class EditYesterdaySpot extends Component {
                     
                     <div className="formDiv">
                         <h2>Edit {this.props.location.state.spot.name}</h2>
-                        <form className="form" onSubmit={(event) => this.handleSubmit(event, this.props.location.state.spot.id)}>
+                        <form className="form" onSubmit={(event) => this.submitAlert(event)}>
                             <div className="formSubDiv">
                                 <div className="form-div2">
                                     <label htmlFor="image_url">Image: </label>

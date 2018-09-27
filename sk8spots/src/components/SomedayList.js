@@ -13,7 +13,8 @@ const SomedayList = (props) => {
         return (<SomedaySpot key={spot.id} 
                             spot={spot}
                             title={props.title} 
-                            deleteSomedaySpot={props.deleteSomedaySpot} 
+                            deleteSomedaySpot={props.deleteSomedaySpot}
+                            deleteSomedaySpotAlert={props.deleteSomedaySpotAlert} 
                             addEditToGlobalState={props.addEditToGlobalState} 
                 />)
     })

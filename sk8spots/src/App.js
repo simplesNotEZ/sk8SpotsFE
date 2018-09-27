@@ -46,6 +46,12 @@ class App extends Component {
     
   }
 
+  deleteSomedaySpotAlert= (event) => {
+    event.preventDefault();
+
+    alert("Nice try buddy.  Don't be meddlin with my database son!");
+  };
+
   deleteYesterdaySpot= (event, spotId) => {
     event.preventDefault();
     
@@ -64,6 +70,12 @@ class App extends Component {
     })
     
   }
+
+  deleteYesterdaySpotAlert= (event) => {
+    event.preventDefault();
+
+    alert("Nice try buddy.  Don't be meddlin with my database son!");
+  };
 
   addGifToGlobalState = (newSpot) => {
 
@@ -145,7 +157,8 @@ class App extends Component {
                     render={ (props) => {
                       return (<SomedayList {...props} title={this.state.title[1]} 
                                                       someday={this.state.someday} 
-                                                      deleteSomedaySpot={this.deleteSomedaySpot} 
+                                                      deleteSomedaySpot={this.deleteSomedaySpot}
+                                                      deleteSomedaySpotAlert={this.deleteSomedaySpotAlert} 
                                                       addEditToGlobalState={this.addEditToGlobalState} 
                               />)
                       }
@@ -155,7 +168,8 @@ class App extends Component {
                     render={ (props) => {
                       return (<YesterdayList {...props} title={this.state.title[1]} 
                                                         yesterday={this.state.yesterday}
-                                                        deleteYesterdaySpot={this.deleteYesterdaySpot} 
+                                                        deleteYesterdaySpot={this.deleteYesterdaySpot}
+                                                        deleteYesterdaySpotAlert={this.deleteYesterdaySpotAlert} 
                               />)
                       }
                     }
@@ -181,7 +195,7 @@ class App extends Component {
             <Route path="/editSomedaySpot" 
                     render={ (props) => {
                       return (<EditSomedaySpot {...props} title={this.state.title[1]}
-                                                          fetchSomeday={this.fetchSomeday}
+                                                          fetchSomeday={this.fetchSomeday} 
                               />)
                       }
                     }

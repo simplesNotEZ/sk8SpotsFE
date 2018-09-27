@@ -38,7 +38,7 @@ const SomedaySpot = (props) => {
                     }} >
                         <button className="editBtn">Edit</button>
                     </Link>
-                    <button className="deleteBtn" onClick={(event) => props.deleteSomedaySpot(event, props.spot.id)}>Delete</button>
+                    <button className="deleteBtn" onClick={(event) => props.deleteSomedaySpotAlert(event, props.spot.id)}>Delete</button>
                 </div>
             </div> 
         </li>

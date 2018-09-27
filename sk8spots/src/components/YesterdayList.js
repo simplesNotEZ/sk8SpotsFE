@@ -12,6 +12,7 @@ const YesterdayList = (props) => {
         return (<YesterdaySpot key={spot.id} 
                                 spot={spot}
                                 deleteYesterdaySpot={props.deleteYesterdaySpot}
+                                deleteYesterdaySpotAlert={props.deleteYesterdaySpotAlert}
                 />)
     })
     
