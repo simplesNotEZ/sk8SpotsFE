@@ -1,9 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../App.css';
 
 const SomedaySpot = (props) => {
-    
-    console.log("hello from Someday Spot.  Here're the props: ", props);
     
     return (
         <li className="spotCard">
@@ -29,6 +28,17 @@ const SomedaySpot = (props) => {
                             &nbsp;&nbsp;&nbsp;&nbsp;{props.spot.description} 
                         </p>
                     </div>
+                </div>
+                <div className="EDbuttons">
+                    <Link to={{
+                        pathname: "/editSomedaySpot",
+                        state: {
+                            spot: props.spot
+                        }
+                    }} >
+                        <button className="editBtn">Edit</button>
+                    </Link>
+                    <button className="deleteBtn" onClick={(event) => props.deleteSomedaySpotAlert(event, props.spot.id)}>Delete</button>
                 </div>
             </div> 
         </li>

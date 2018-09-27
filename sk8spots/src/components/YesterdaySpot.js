@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../App.css';
 
 
@@ -30,6 +31,17 @@ const YesterdaySpot = (props) => {
                             &nbsp;&nbsp;&nbsp;&nbsp;{props.spot.description} 
                         </p>
                     </div>
+                </div>
+                <div className="EDbuttons">
+                    <Link to={{
+                        pathname: "/editYesterdaySpot",
+                        state: {
+                            spot: props.spot
+                        }
+                    }} >
+                        <button className="editBtn">Edit</button>
+                    </Link>
+                    <button className="deleteBtn" onClick={(event) => props.deleteYesterdaySpotAlert(event)}>Delete</button>
                 </div>
             </div> 
         </li>
