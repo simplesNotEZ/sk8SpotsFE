@@ -73,4 +73,32 @@ Yesterday:
 
         onSubmit={(event) => this.handleSubmit(event, this.props.location.state.spot.id)}
 
+// Extra methods:  ////////////////////////////////////////////////////////////////////////////////////
 
+addGifToGlobalState = (newSpot) => {
+
+    let currentSpots = this.state.someday;
+    console.log("currentSpots is: ", currentSpots);
+    currentSpots.unshift(newSpot);
+    let updatedSpots = currentSpots;
+    console.log("after unshifting, updatedSpots is: ", updatedSpots);
+    this.setState({
+        someday: updatedSpots,
+        postedNewSpot: true
+    });
+    console.log("State updated with updatedSpots: ", this.state.someday);
+    console.log("postedNewSpot in state is now: ", this.state.postedNewSpot);
+
+}
+
+addEditToGlobalState = (event, spotToEdit) => {
+    event.preventDefault();
+    console.log("addEditToGlobalState is running.  And here's the spotToEdit: ", spotToEdit);
+    console.log("spotToEdit in state before it's added: ", this.state.spotToEdit);
+    this.setState({
+        spotToEdit: spotToEdit
+    });
+    console.log("here's this.state.spotToEdit once it's added: ", this.state.spotToEdit);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////

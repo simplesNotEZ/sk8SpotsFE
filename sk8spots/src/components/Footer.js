@@ -5,8 +5,7 @@ import instagramIcon from '../img/instagramIcon.png';
 import '../App.css';
 
 const Footer = (props) => {
-    // console.log(props);
-    
+        
     return (
         <footer className="App-footer">
             <p>&copy; 2018 $k8$pots. All Rights Reserved.</p>

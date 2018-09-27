@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Header3 from './Header3';
 import Footer from './Footer';
 import '../App.css';
@@ -33,11 +33,8 @@ class EditSomedaySpot extends Component {
     
     handleSubmit = (event, id) => {
         event.preventDefault();
-        console.log("here's handleSubmit: ", this.state);
-        console.log("handleSubmit from edit's id param is: ", id);
         let data = {...this.state};
         delete data.posted;
-        console.log("after delete: ", data);
         fetch('http://localhost:9000/someday/' + id, {
             method: 'PUT',
             headers: new Headers({'Content-Type': 'application/json'}),
@@ -57,16 +54,10 @@ class EditSomedaySpot extends Component {
             return resp.json();
         })
         .then(json => {
-            console.log("here's the response.json back from the PUT: ", json);
-            // if (!json.error) {
             this.props.fetchSomeday();
             this.setState({
                 posted: true
             });
-            console.log("state after setting posted to true: ", this.state);
-            //     const newSpot = json;
-            //     this.props.addGifToGlobalState(newSpot);
-            // }
         })    
     }
 
@@ -77,7 +68,6 @@ class EditSomedaySpot extends Component {
     }
 
     componentDidMount () {
-        console.log("Props passed to Edit: ", this.props);
     }
     
     render () {

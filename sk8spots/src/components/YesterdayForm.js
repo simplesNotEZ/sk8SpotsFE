@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Header3 from './Header3';
 import Footer from './Footer';
 import '../App.css';
@@ -30,11 +30,8 @@ class YesterdayForm extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("here's handleSubmit: ", this.state);
-        console.log("And here's this.props: ", this.props);
         let data = {...this.state};
         delete data.posted;
-        console.log("after delete: ", data);
         fetch(apiURL, {
             method: 'POST',
             headers: new Headers({'Content-Type': 'application/json'}),
@@ -54,15 +51,10 @@ class YesterdayForm extends Component {
             return resp.json();
         })
         .then(json => {
-            console.log("here's the response.json back from the post: ", json);
-            // if (!json.error) {
             this.props.fetchYesterday();
             this.setState({
                 posted: true
             })
-            //     const newSpot = json;
-            //     this.props.addGifToGlobalState(newSpot);
-            // }
         })    
     } 
     
