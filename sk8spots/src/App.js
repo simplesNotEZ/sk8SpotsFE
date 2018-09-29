@@ -12,6 +12,8 @@ import EditYesterdaySpot from './components/EditYesterdaySpot';
 
 const apiURL1 = "http://localhost:9000/someday";
 const apiURL2 = "http://localhost:9000/yesterday";
+const apiURL3 = "https://sk8spots.herokuapp.com/someday";
+const apiURL4 = "https://sk8spots.herokuapp.com/yesterday";
 
 class App extends Component {
   state = {
@@ -34,7 +36,7 @@ class App extends Component {
         someday: filteredSpots
     });
 
-    fetch('http://localhost:9000/someday/' + spotId, {
+    fetch( apiURL3 + '/' + spotId, {
     method: 'DELETE'
     })
     
@@ -58,7 +60,7 @@ class App extends Component {
         yesterday: filteredSpots
     });
 
-    fetch('http://localhost:9000/yesterday/' + spotId, {
+    fetch(apiURL4 + '/' + spotId, {
     method: 'DELETE'
     })
     
@@ -71,7 +73,7 @@ class App extends Component {
   }
 
   fetchSomeday = () => {
-    fetch(apiURL1)
+    fetch(apiURL3)
       .then(response => response.json())
       .then((json) => {
         const reversedArr = json.somedaySpots.reverse();
@@ -82,7 +84,7 @@ class App extends Component {
   }
 
   fetchYesterday = () => {
-    fetch(apiURL2)
+    fetch(apiURL4)
       .then(response => response.json())
       .then((json) => {
         const reversedArr = json.yesterdaySpots.reverse();
