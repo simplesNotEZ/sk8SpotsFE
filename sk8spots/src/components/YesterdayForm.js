@@ -4,7 +4,7 @@ import Header3 from './Header3';
 import Footer from './Footer';
 import '../App.css';
 
-const apiURL = "http://localhost:9000/yesterday";
+const apiURL = "https://sk8spots.herokuapp.com/yesterday";
 
 class YesterdayForm extends Component {
     

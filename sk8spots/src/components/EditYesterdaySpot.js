@@ -5,7 +5,8 @@ import Footer from './Footer';
 import '../App.css';
 
 
-const apiURL = "http://localhost:9000/yesterday";
+const apiURL1 = "http://localhost:9000/yesterday";
+const apiURL2 = "https://sk8spots.herokuapp.com/yesterday";
 
 class EditYesterdaySpot extends Component {
     
@@ -35,7 +36,7 @@ class EditYesterdaySpot extends Component {
         event.preventDefault();
         let data = {...this.state};
         delete data.posted;
-        fetch('http://localhost:9000/yesterday/' + id, {
+        fetch(apiURL2 + '/' + id, {
             method: 'PUT',
             headers: new Headers({'Content-Type': 'application/json'}),
             body: JSON.stringify(data)
