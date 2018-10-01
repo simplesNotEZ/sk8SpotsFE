@@ -8,3 +8,27 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As an individual who likes to skate several different spots, both for variety and depending on what kind of skating I'm up for, I wanted to create an application that can keep track of all these spots.  Having the specifics as far as addresses go can be crucial if you wanna find that spot (for the first time or for that next time).  Plus, it's good to have some pictures in order to be able to keep in mind what the spot has to offer and to show your friends.
 
 ## Screenshots
+Home-Page:
+
+![alt text](https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/sk8Spots_Home.png "$k8$pots Home-page")
+
+Someday-Spots Page:
+
+![alt text](https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/somedaySpots.png "Someday Spots page")
+
+## Technology Utilized
+### Front-end:
+HTML5
+CSS3
+JavaScript
+React
+Hosted on Firebase
+### Back-end:
+Node
+Express
+PostgreSQL
+Knex
+Hosted on Heroku
+
+## Online At:
+https://sk8spots-d378a.firebaseapp.com/
