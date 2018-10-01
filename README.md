@@ -19,15 +19,24 @@ Someday-Spots Page:
 ## Technology Utilized
 ### Front-end:
 HTML5
+
 CSS3
+
 JavaScript
+
 React
+
 Hosted on Firebase
+
 ### Back-end:
 Node
+
 Express
+
 PostgreSQL
+
 Knex
+
 Hosted on Heroku
 
 ## Online At:
