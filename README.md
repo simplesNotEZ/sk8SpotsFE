@@ -10,11 +10,13 @@
 ## Screenshots
 Home-Page:
 
-![alt text](https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/sk8Spots_Home.png "$k8$pots Home-page")
+<img src="https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/sk8Spots_Home.png" title="$k8$pots Home-page" width="285" height="200">
+
 
 Someday-Spots Page:
 
-![alt text](https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/somedaySpots.png "Someday Spots page")
+<img src="https://github.com/simplesNotEZ/sk8SpotsFE/blob/master/sk8spots/src/img/somedaySpots.png" title="Someday-Spots-page" width="285" height="200">
+
 
 ## Technology Utilized
 ### Front-end:
