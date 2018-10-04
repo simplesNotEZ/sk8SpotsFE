@@ -41,5 +41,10 @@ Knex
 
 Hosted on Heroku
 
+#### Back-end repo
+https://github.com/simplesNotEZ/sk8SpotsBE
+
 ## Online At:
 https://sk8spots-d378a.firebaseapp.com/
+
+
